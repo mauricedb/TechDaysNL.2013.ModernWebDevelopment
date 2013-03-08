@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Calculator Unit tests</title>
+    <link href="Styles/qunit.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+
+    <script src="Js/Calculator.js"></script>
+    <script src="Scripts/qunit.js"></script>
+    <script src="Scripts/jquery-1.8.2.js"></script>
+    <script>
+
+        test("Add 1 and 1", function () {
+            // Act
+            var result = addNumbers(1, 1);
+
+            // Assert
+            equal(result, 2, "1 + 1 should be 2");
+        });
+
+        test("Add 0 and 1", function () {
+            // Act
+            var result = addNumbers(0, 1);
+
+            // Assert
+            equal(result, 1, "0 + 1 should be 1");
+        });
+
+        test("Add 3 and 2", function () {
+            // Act
+            var result = addNumbers(3, 2);
+
+            // Assert
+            equal(result, 5, "3 + 2 should be 5");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+﻿div {
+    margin: 20px;
+}
+
+.TransitionEase1S() {
+    -moz-transition: all ease-in-out 1s;
+    -o-transition: all ease-in-out 1s;
+    -webkit-transition: all ease-in-out 1s;
+    transition: all ease-in-out 1s;
+}
+
+.ScaleTransform(@scale: 1.05) {
+    -moz-transform: scale(@scale);
+    -ms-transform: scale(@scale);
+    -o-transform: scale(@scale);
+    -webkit-transform: scale(@scale);
+    transform: scale(@scale);
+}
+
+.outer {
+    background-color: yellow;
+    border-radius: 12px;
+    .TransitionEase1S();
+
+    &:hover {
+        .ScaleTransform();
+    }
+
+
+    .inner {
+        background-color: red;
+        .TransitionEase1S();
+        box-shadow: rgba(255, 0, 0, 0.5) 10px 10px 10px;
+
+        &:hover {
+        .ScaleTransform(1.5);
+        }
+    }
+}
+
+.inner {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    display: inline-block;
+    border-radius: 6px;
+    box-shadow: rgba(0, 128, 0, 0.5) 10px 10px 10px;
+}
+
+@media (max-width: 600px) and (min-width: 400px) {
+    .inner {
+        width: 75px;
+        height: 75px;
+    }
+}
+
+@media (max-width: 399px) {
+    .inner {
+        width: 50px;
+        height: 50px;
+    }
+}
